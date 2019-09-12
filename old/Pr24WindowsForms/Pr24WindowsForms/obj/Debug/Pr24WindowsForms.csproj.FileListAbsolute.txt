@@ -1,0 +1,54 @@
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\bin\Debug\Pr24WindowsForms.exe.config
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\bin\Debug\Pr24WindowsForms.exe
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\bin\Debug\Pr24WindowsForms.pdb
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.csprojAssemblyReference.cache
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Form1.resources
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Properties.Resources.resources
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.csproj.GenerateResource.cache
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.exe
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.pdb
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_Student.resources
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_Department.resources
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Delete_Student.resources
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Search_By_DateOfBirth.resources
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Search_By_LastName.resources
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_University.resources
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_toDepartment.resources
+C:\Users\artyo\source\repos\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_toUniversity.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\bin\Debug\Pr24WindowsForms.exe.config
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\bin\Debug\Pr24WindowsForms.exe
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\bin\Debug\Pr24WindowsForms.pdb
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.csprojAssemblyReference.cache
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_Student.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_Department.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_toDepartment.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_toUniversity.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_University.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Delete_Student.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Form1.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Search_By_DateOfBirth.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Search_By_LastName.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Properties.Resources.resources
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.csproj.GenerateResource.cache
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.exe
+C:\Users\artyo\OneDrive\Рабочий стол\Универ\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.pdb
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\bin\Debug\Pr24WindowsForms.exe.config
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\bin\Debug\Pr24WindowsForms.exe
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\bin\Debug\Pr24WindowsForms.pdb
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.csprojAssemblyReference.cache
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_Student.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_Department.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_toDepartment.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_toUniversity.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Add_University.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Delete_Student.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Form1.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Search_By_DateOfBirth.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Search_By_LastName.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.Properties.Resources.resources
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.csproj.GenerateResource.cache
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.csproj.CoreCompileInputs.cache
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.exe
+C:\Универ\4 семестр\СиАКОД\Pr24WindowsForms\Pr24WindowsForms\obj\Debug\Pr24WindowsForms.pdb

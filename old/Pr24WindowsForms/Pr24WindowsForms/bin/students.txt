@@ -1,0 +1,5 @@
+artyom a a 29.10.1999 0 null null null
+petrov iva a 22.05.2000 0 null null null
+b b b 27.05.2019 0 null null null
+undefined   01.01.0001 0 null null null
+ivanov ivan ivanovich 01.03.1992 0 null null null
