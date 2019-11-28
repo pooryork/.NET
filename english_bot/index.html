@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <title>Anglichanin Bot</title>
+    <style>
+        .light-green {
+            background-color: #412C84 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark light-green">
+        <a class="navbar-brand" href="#">Anglichanin Bot</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileMenu"
+            aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mobileMenu">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Как изучать английский язык с нами</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./learn.html">Учить слова</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./train.html">Тренировка</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">О нас</a>
+                </li>
+            </ul>
+            <!-- Если пользователь залогинен-->
+            <!--<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a href="./lk.html" class="nav-link waves-effect">
+						<span class="badge badge-pill badge-danger">12</span>
+						<span class="oi oi-cart"></span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./lk.html">
+						<span class="clearfix d-none d-sm-inline-block">5</span>
+						<span class="oi oi-dollar"></span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./lk.html">
+						<span class="clearfix d-none d-sm-inline-block">gt99</span>
+						<span class="oi oi-person"></span>
+					</a>
+				</li>-->
+            <button type="button" class="btn navbtnlogin btn-outline-light btn-lg" data-toggle="modal"
+                data-target="#login">Войти</button>
+
+            <div id="login" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form class="form-signin" action="">
+                            <h1 class="h3 mb-3 font-weight-normal">Авторизуйтесь</h1>
+                            <label class="sr-only">Login</label>
+                            <input id="inputLogin" class="form-control" placeholder="Логин" required autofocus>
+                            <label class="sr-only">Password</label>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Пароль"
+                                required>
+                            <!--<a class="h6 mb-3 font-weight-normal" href="./register.html">Впервые у нас?
+								Зарегистрируйтесь!</a>-->
+                            <button id="login" class="btn btnlogin btn-lg btn-block" type="submit">Войти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn navbtnregister btn-outline-light btn-lg" data-toggle="modal"
+                data-target="#register">Регистрация</button>
+
+            <div id="register" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form class="form-register" action="">
+                            <h1 class="h3 mb-3 font-weight-normal">Зарегистрируйтесь</h1>
+                            <label class="sr-only">Name</label>
+                            <input id="inputName" class="form-control" placeholder="Имя" required autofocus>
+                            <label class="sr-only">Login</label>
+                            <input id="inputLogin" class="form-control" placeholder="Логин" required autofocus>
+                            <label class="sr-only">Email</label>
+                            <input id="inputEmail" class="form-control" placeholder="Адрес электронной почты" required
+                                autofocus>
+                            <label class="sr-only">Password</label>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Пароль"
+                                required>
+                            <!--<h1 class="h6 mb-3 font-weight-normal" href="/register">Впервые у нас? Зарегистрируйтесь!</h1>-->
+                            <!--a class="h6 mb-3 font-weight-normal" href="./auth.html">Уже были у нас? Войдите!</a>-->
+                            <button id="register" class="btn btnregister btn-lg btn-block"
+                                type="submit">Регистрация</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container">
+
+
+        <footer class="footer mt-auto">
+            <div class="container">
+                <span class="text-muted">Поддержка - tg: @artyom_burdavitsyn</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="js/stepper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
