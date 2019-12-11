@@ -53,3 +53,38 @@ body {
     transition: all 0.3s ease-out;
     color: white;
 }
+
+.btn.custom {
+    background-color: #412C84;
+    color: white;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+.btn.custom:hover {
+    box-shadow: 8.2px 5.7px 20px rgba(0, 0, 0, 0.34);
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.card.mb-4:hover {
+    box-shadow: 8.2px 5.7px 20px rgba(0, 0, 0, 0.34);
+    /*transform: translateY(-5px);
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;*/
+}
+
+.card-columns {
+    max-width: 1200px;
+    margin-top: 5%;
+    column-count: 4;
+}
+
+.card.mb-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    margin: auto; /* Выравниваем по центру */
+}
+

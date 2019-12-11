@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <title>Anglichanin Bot</title>
+    <style>
+        .light-green {
+            background-color: #412C84 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <%if (typeAuth == 'noLogin') { %>
+    <%- include ('./blocks/noLoginHeader.ejs') %>
+    <% } %>
+
+    <%if (type_content == 'learn') { %>
+    <%- include ('./blocks/learn.ejs') %>
+    <% } %>
+    <%if (type_content == 'train') { %>
+    <%- include ('./blocks/train.ejs') %>
+    <% } %>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="js/stepper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
+
+<style>
+    .container {
+        max-width: 1200px;
+        max-height: 480px;
+        margin-top: 5%;
+        flex: 1 0 auto;
+    }
+
+    .btn.navbtnregister {
+        margin: 5px;
+    }
+
+    .btn.navbtnlogin {
+        margin: 5px;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .album {
+        /*background-color:#DCDCDC;*/
+    }
+
+    .form-signin,
+    .form-register {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: 5px;
+        align-self: center;
+    }
+
+    .form-control {
+        margin: 5px;
+    }
+
+    .form-signin input[type="password"],
+    .form-register input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .btnlogin,
+    .btnregister {
+        background-color: #412C84;
+        border: none;
+        color: white;
+        align-self: center;
+    }
+
+    .btnlogin:hover,
+    .btnregister:hover {
+        box-shadow: 8.2px 5.7px 20px rgba(0, 0, 0, 0.34);
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+        color: white;
+    }
+
+    .btn.custom {
+        background-color: #8bc34a;
+        color: white;
+    }
+
+    .btn.custom:hover {
+        box-shadow: 8.2px 5.7px 20px rgba(0, 0, 0, 0.34);
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+    }
+
+    .card.mb-4 {
+        /*margin: 5%;*/
+    }
+
+    .card.mb-4:hover {
+        box-shadow: 8.2px 5.7px 20px rgba(0, 0, 0, 0.34);
+        transform: translateY(-5px);
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+        margin: 1%;
+    }
+
+    .card-columns {
+        max-width: 1200px;
+        margin-top: 5%;
+        column-count: 4;
+    }
+
+    .card-title {
+        align-self: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .finish_train {
+        background-color: #412C84;
+        border: none;
+        color: white;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute; 
+        display: flex; 
+    }
+
+    .finish_train:hover {
+        background-color: white;
+        border: none;
+        color: black;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        display: flex;  
+    }
+
+    .finish_learn {
+        background-color: #412C84;
+        border: none;
+        color: white;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute; 
+        display: flex; 
+    }
+
+    .finish_learn:hover {
+        background-color: white;
+        border: none;
+        color: black;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute; 
+        display: flex; 
+    }
+</style>

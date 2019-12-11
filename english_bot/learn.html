@@ -9,8 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">    
-    <link href="style.css" rel="stylesheet">
+    <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <!--<link href="style.css" rel="stylesheet">-->
 
     <title>Anglichanin Bot</title>
     <style>
@@ -115,6 +115,113 @@
 
         </div>
     </nav>
+
+    <!-- Учить слова -->
+    <div class="container">
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <form class="form-signin" method="post" action="/login" name="login">
+                    <img src="img/dog.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Dog</h5>
+                        <!--<p class="card-text">Some quick example text to build on the card title and make up the
+                            bulk of the
+                            card's content.</p> -->
+                        <a href="https://www.youtube.com/watch?v=_0dgnlnyq9s" class="btn custom">Далее</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <style>
+            .container {
+                max-width: 1200px;
+                max-height: 480px;
+                margin-top: 5%;
+                flex: 1 0 auto;
+            }
+        
+            .btn.navbtnregister {
+                margin: 5px;
+            }
+        
+            .btn.navbtnlogin {
+                margin: 5px;
+            }
+        
+            html,
+            body {
+                height: 100%;
+            }
+        
+            .form-signin,
+            .form-register {
+                width: 100%;
+                max-width: 330px;
+                padding: 15px;
+                margin: 5px;
+                align-self: center;
+            }
+        
+            .form-control {
+                margin: 5px;
+            }
+        
+            .form-signin input[type="password"],
+            .form-register input[type="password"] {
+                margin-bottom: 10px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        
+            .btnlogin,
+            .btnregister {
+                background-color: #412C84;
+                border: none;
+                color: white;
+                align-self: center;
+            }
+        
+            .btnlogin:hover,
+            .btnregister:hover {
+                box-shadow: 8.2px 5.7px 20px rgba(0, 0, 0, 0.34);
+                -webkit-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+                color: white;
+            }
+        
+            .btn.custom {
+                background-color: #412C84;
+                color: white;
+                align-content: center;
+                align-self: center;
+                align-items: center;
+            }
+        
+            .btn.custom:hover {
+                box-shadow: 8.2px 5.7px 20px rgba(0, 0, 0, 0.34);
+                -webkit-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+            }
+        
+            .card.mb-4:hover {
+                box-shadow: 8.2px 5.7px 20px rgba(0, 0, 0, 0.34);
+                /*transform: translateY(-5px);
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;*/
+            }
+        
+            .card.mb-4 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                margin: auto;
+                /* Выравниваем по центру */
+            }
+        </style>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
