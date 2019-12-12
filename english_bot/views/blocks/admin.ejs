@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div class="row">
+
+        <form class="form-add" method="post" action="/admin" name="add_picture" encType="multipart/form-data">
+            <h2> Добавление новых карточек</h2>
+            <h5> Осторожно, не ошибитесь, пожалуйста!</h5>
+            <h5> Иначе, возможно, всё сломается ;)</h5>
+            <div class="input-group mb-3">
+                <input type="text" name="topic" placeholder="Группа предметов" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="word" placeholder="Название предмета" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" name="picture" class="custom-file-input" id="inputGroupFile04"
+                        aria-describedby="inputGroupFileAddon04" placeholder="Картинка в формате .jpg">
+                    <label class="custom-file-label" for="inputGroupFile04">Файл .jpg</label>
+                </div>
+            </div>
+    <button id="add" class="btn add" type="submit">Добавить</button>
+    </form>
+</div>
+
+</div>
+
+<style>
+    .form-add{
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        margin: auto;
+    }
+</style>

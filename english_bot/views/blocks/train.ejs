@@ -2,7 +2,23 @@
     <div class="album py-5">
 
         <div class="row">
-            <div class="col-md-4">
+            <form class="form-check" method="post" action="/train" name="train_check">
+                <% for(var i=0; i < data.length; i++) { %>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm"><img src="<%= data[i].picture_ref%>" class="card-img-top" alt="..."
+                            height="300">
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <input type="text" placeholder="What is it?" class="form-control"
+                                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <% } %>
+            <!-- <div class="col-md-4">
                 <div class="card mb-4 shadow-sm"><img
                         src="https://cdn.pixabay.com/photo/2019/09/28/20/21/trees-4511721_960_720.jpg"
                         class="card-img-top" alt="...">
@@ -37,9 +53,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <button id="finish_train" class="btn finish_train" type="submit">Я всё решил!</button>
-    </div>  
+    </div>
 
 </div>
