@@ -15,10 +15,6 @@ var pool = mysql.createPool({
     database: 'a0369141_anglichanin'
 });
 
-function orderByRand() {
-
-}
-
 /* 
 Имя базы данных: a0369141_anglichanin
 Адрес хоста: localhost
@@ -30,11 +26,9 @@ let app = express();
 
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
-app.use(fileUpload({
-    tempFileDir: '/public/img'
-}));
-//app.use(express.static(__dirname + "/public"));
-//app.use(__dirname + './static', express.static('static'));
+
+let pictures;
+let cur_train;
 
 app.get('/', (req, res) => {
     res.writeHead(302, {
@@ -58,7 +52,7 @@ app.get('/learn', function (req, res) {
         pool.query(sql, ['animals'], function (req, res1) {
 
             console.log(res1);
-            res_send = res1;
+            pictures = res1;
 
             res.render('main', {
                 typeAuth: 'noLogin',
@@ -101,26 +95,14 @@ app.get('/train', function (req, res) {
         pool.query(sql, ['animals'], function (req, res1) {
 
             console.log(res1);
-            res_send = res1;
+            pictures = res1;
+            cur_train = res1;
 
             res.render('main', {
                 typeAuth: 'noLogin',
                 type_content: 'train',
-                data: res1
+                data: pictures
             });
-
-            // for (i in res1) {
-            //     //console.log(i);
-            //     words.push(res1[i].word);
-            //     topics.push(res1[i].topic);
-            //     refs.push(res1[i].picture_ref);
-            //     // console.log(res[i].word);
-            //     // console.log(res[i].topic);
-            //     // console.log(res[i].picture_ref);
-            // }
-            // console.log(words);
-            // console.log(topics);
-            // console.log(refs);
 
         });
     } catch (e) {
@@ -134,6 +116,49 @@ app.get('/admin', function (req, res) {
         typeAuth: 'noLogin',
         type_content: 'admin'
     });
+});
+
+app.post('/train', urlencodedParser, function (req, res) {
+
+    let data = req.body;
+    console.log(data);
+
+    let incorrectAnswers = [];
+    let incorrectAnswersData = [];
+    let correctAnswers = 0;
+
+    for (let key in data) {
+
+        console.log(key.toLocaleLowerCase() + ' - ' + data[key]);
+
+        if (key.toLocaleLowerCase() == data[key].toLocaleLowerCase()) {
+            correctAnswers++;
+        } else {
+            incorrectAnswers.push(key.toLocaleLowerCase());
+        }
+    }
+
+    for (let i in pictures) {
+        
+        console.log(incorrectAnswers);
+        console.log(incorrectAnswers.indexOf(pictures[i].word) !== -1);
+        console.log(pictures[i].word);
+        if (incorrectAnswers.indexOf(pictures[i].word.toLocaleLowerCase()) !== -1) {
+            incorrectAnswersData.push(pictures[i]);
+        }
+    }
+
+    console.log(incorrectAnswersData);
+
+    console.log(correctAnswers);
+
+    res.render('main', {
+        typeAuth: 'noLogin',
+        type_content: 'results',
+        data: incorrectAnswersData,
+        correctAnswers: correctAnswers
+    });
+
 });
 
 app.post('/admin', urlencodedParser, function (req, res) {
