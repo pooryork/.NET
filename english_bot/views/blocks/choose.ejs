@@ -1,0 +1,32 @@
+<div class="container">
+
+    <div class="row">
+
+        <form class="form-choose" action="/learn" method="post" name="add_picture">
+            <h2> Выбор категории и количество слов</h2>
+            <div class="input-group mb-3">
+                <select name="topic" class="custom-select" id="inputGroupSelect02">
+                    <option selected>Выберите категорию</option>
+                    <% for(var i=0; i < data.length; i++) { %>
+                        <option name="<%= data[i] %>"><%= data[i] %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="numOfWords" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" placeholder="Максимальное количество слов">
+            </div>
+            <button id="add" class="btn add" type="submit" name="learn">Готово</button>
+        </form>
+    </div>
+
+</div>
+
+<style>
+    .form-choose {
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        margin: auto;
+    }
+</style>

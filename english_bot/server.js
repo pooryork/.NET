@@ -46,14 +46,79 @@ app.get('/main', function (req, res) {
 });
 
 app.get('/learn', function (req, res) {
-    let sql = 'SELECT * FROM pictures WHERE topic = ?';
 
-    try {
+    let sql = 'SELECT topic FROM pictures';
+    pool.query(sql, [], function (req, res1) {
 
-        pool.query(sql, ['animals'], function (req, res1) {
+        let topics = [];
+        console.log(res1);
+        for (i in res1) {
+            if (topics.indexOf(res1[i].topic) == -1) {
+                topics.push(res1[i].topic);
+            }
+        }
+
+        console.log(topics);
+
+        res.render('main', {
+            typeAuth: 'noLogin',
+            type_content: 'choose',
+            data: topics
+        });
+
+        // for (i in res1) {
+        //     //console.log(i);
+        //     words.push(res1[i].word);
+        //     topics.push(res1[i].topic);
+        //     refs.push(res1[i].picture_ref);
+        //     // console.log(res[i].word);
+        //     // console.log(res[i].topic);
+        //     // console.log(res[i].picture_ref);
+        // }
+        // console.log(words);
+        // console.log(topics);
+        // console.log(refs);
+
+    });
+});
+
+// let sql = 'SELECT * FROM pictures WHERE topic = ?';
+// pool.query(sql, ['animals'], function (req, res1) {
+
+//     console.log(res1);
+//     pictures = res1;
+
+//     res.render('main', {
+//         typeAuth: 'noLogin',
+//         type_content: 'learn',
+//         data: res1
+//     });
+
+//     // for (i in res1) {
+//     //     //console.log(i);
+//     //     words.push(res1[i].word);
+//     //     topics.push(res1[i].topic);
+//     //     refs.push(res1[i].picture_ref);
+//     //     // console.log(res[i].word);
+//     //     // console.log(res[i].topic);
+//     //     // console.log(res[i].picture_ref);
+//     // }
+//     // console.log(words);
+//     // console.log(topics);
+//     // console.log(refs);
+
+// });
+
+app.post('/learn', urlencodedParser, function (req, res) {
+
+    let data = req.body;
+
+    if (data.learn == '') {
+        console.log(data);
+        let sql = 'SELECT * FROM pictures WHERE topic = ? LIMIT ' + data.numOfWords;
+        pool.query(sql, [data.topic], function (req, res1) {
 
             console.log(res1);
-            pictures = res1;
 
             res.render('main', {
                 typeAuth: 'noLogin',
@@ -61,24 +126,9 @@ app.get('/learn', function (req, res) {
                 data: res1
             });
 
-            // for (i in res1) {
-            //     //console.log(i);
-            //     words.push(res1[i].word);
-            //     topics.push(res1[i].topic);
-            //     refs.push(res1[i].picture_ref);
-            //     // console.log(res[i].word);
-            //     // console.log(res[i].topic);
-            //     // console.log(res[i].picture_ref);
-            // }
-            // console.log(words);
-            // console.log(topics);
-            // console.log(refs);
-
         });
-    } catch (e) {
-        console.log('Ууупс ...');
-        console.log(e);
     }
+
 });
 
 app.get('/about', function (req, res) {
