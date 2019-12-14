@@ -26,6 +26,7 @@ let app = express();
 
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
+app.use(fileUpload());
 
 let pictures;
 let cur_train;
@@ -114,7 +115,8 @@ app.get('/train', function (req, res) {
 app.get('/admin', function (req, res) {
     res.render('main', {
         typeAuth: 'noLogin',
-        type_content: 'admin'
+        type_content: 'admin',
+        msg: 'nomsg'
     });
 });
 
@@ -129,21 +131,21 @@ app.post('/train', urlencodedParser, function (req, res) {
 
     for (let key in data) {
 
-        console.log(key.toLocaleLowerCase() + ' - ' + data[key]);
+        console.log(key.toLowerCase() + ' - ' + data[key]);
 
-        if (key.toLocaleLowerCase() == data[key].toLocaleLowerCase()) {
+        if (key.toLowerCase() == data[key].toLowerCase()) {
             correctAnswers++;
         } else {
-            incorrectAnswers.push(key.toLocaleLowerCase());
+            incorrectAnswers.push(key.toLowerCase());
         }
     }
 
     for (let i in pictures) {
-        
+
         console.log(incorrectAnswers);
         console.log(incorrectAnswers.indexOf(pictures[i].word) !== -1);
         console.log(pictures[i].word);
-        if (incorrectAnswers.indexOf(pictures[i].word.toLocaleLowerCase()) !== -1) {
+        if (incorrectAnswers.indexOf(pictures[i].word.toLowerCase()) !== -1) {
             incorrectAnswersData.push(pictures[i]);
         }
     }
@@ -164,28 +166,60 @@ app.post('/train', urlencodedParser, function (req, res) {
 app.post('/admin', urlencodedParser, function (req, res) {
 
     let data = req.body;
-    let picture_ref = '/public/img/' + data.word.toLowerCase() + '.jpg';
-
-    //дописать проверку, что такой предмет уже есть и что поля не пустые
-
-    let sql_insert = "INSERT INTO pictures (topic, word, picture_ref) VALUES (?, ?, ?)";
-    pool.query(sql_insert, [data.topic, data.word, picture_ref], function (req1, res1) {});
-
-    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-    let sampleFile = req.files.picture;
-
-    // Use the mv() method to place the file somewhere on your server
-    let ref = '.' + picture_ref;
-    sampleFile.mv(ref, function (err) {
-        if (err)
-            console.log(err);
-    });
-
     console.log(data);
 
-    res.render('main', {
-        typeAuth: 'noLogin',
-        type_content: 'admin'
+    let isUnique = true;
+
+    let sql = 'SELECT * FROM pictures WHERE topic = ? AND word = ?';
+    pool.query(sql, [data.topic, data.word], function (req1, res1) {
+
+        try {
+
+            console.log(res1);
+            console.log(res1.length);
+            if (res1.length == 0) {
+                let picture_ref = '/public/img/' + data.word.toLowerCase() + '.jpg';
+
+                // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+                console.log(req.files);
+                // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+                var startup_image = req.files.foo;
+                // Use the mv() method to place the file somewhere on your server
+                startup_image.mv(__dirname + '/public/img/' + data.word.toLowerCase() + '.jpg', function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("uploaded");
+                    }
+                });
+
+                let sql_insert = "INSERT INTO pictures (topic, word, picture_ref) VALUES (?, ?, ?)";
+                pool.query(sql_insert, [data.topic, data.word, picture_ref], function (req2, res2) {});
+
+                console.log(data);
+                let text = 'Слово "' + data.word + '"добавлено в категорию "' + data.topic + '"';
+
+                res.render('main', {
+                    typeAuth: 'noLogin',
+                    type_content: 'admin',
+                    msg: text
+                });
+            } else {
+                res.render('main', {
+                    typeAuth: 'noLogin',
+                    type_content: 'admin',
+                    msg: 'Такое слово уже существует в такой категории!'
+                });
+            }
+
+        } catch {
+            res.render('main', {
+                typeAuth: 'noLogin',
+                type_content: 'admin',
+                msg: 'Что-то пошло не так ;('
+            });
+        }
+
     });
 
 });
