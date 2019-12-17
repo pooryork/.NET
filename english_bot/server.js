@@ -126,12 +126,12 @@ app.post('/choose_train', urlencodedParser, function (req, res) {
 
     let data = req.body;
     console.log(data);
-    
+
     let sql = 'SELECT * FROM pictures WHERE topic = ?';
 
     try {
 
-        pool.query(sql, ['animals'], function (req, res1) {
+        pool.query(sql, [data.topic], function (req, res1) {
 
             console.log(res1);
             pictures = res1;
@@ -150,10 +150,10 @@ app.post('/choose_train', urlencodedParser, function (req, res) {
     }
 });
 
-app.get('/admin', function (req, res) {
+app.get('/add', function (req, res) {
     res.render('main', {
         typeAuth: 'noLogin',
-        type_content: 'admin',
+        type_content: 'add',
         msg: 'nomsg'
     });
 });
@@ -201,7 +201,7 @@ app.post('/train', urlencodedParser, function (req, res) {
 
 });
 
-app.post('/admin', urlencodedParser, function (req, res) {
+app.post('/add', urlencodedParser, function (req, res) {
 
     let data = req.body;
     console.log(data);
@@ -239,13 +239,13 @@ app.post('/admin', urlencodedParser, function (req, res) {
 
                 res.render('main', {
                     typeAuth: 'noLogin',
-                    type_content: 'admin',
+                    type_content: 'add',
                     msg: text
                 });
             } else {
                 res.render('main', {
                     typeAuth: 'noLogin',
-                    type_content: 'admin',
+                    type_content: 'add',
                     msg: 'Такое слово уже существует в такой категории!'
                 });
             }
@@ -253,12 +253,26 @@ app.post('/admin', urlencodedParser, function (req, res) {
         } catch {
             res.render('main', {
                 typeAuth: 'noLogin',
-                type_content: 'admin',
+                type_content: 'add',
                 msg: 'Что-то пошло не так ;('
             });
         }
 
     });
+
+});
+
+app.get('/delete', function (req, res) {
+    res.render('main', {
+        typeAuth: 'noLogin',
+        type_content: 'delete',
+        msg: 'nomsg'
+    });
+});
+
+app.post('/delete', urlencodedParser, function (req, res) {
+
+    
 
 });
 
