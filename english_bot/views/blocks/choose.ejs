@@ -2,7 +2,7 @@
 
     <div class="row">
 
-        <form class="form-choose" action="/learn" method="post" name="add_picture">
+        <form class="form-choose" action="/<%= type_form %>" method="post" name="add_picture">
             <h2> Выбор категории и количество слов</h2>
             <div class="input-group mb-3">
                 <select name="topic" class="custom-select" id="inputGroupSelect02">
@@ -14,9 +14,9 @@
             </div>
             <div class="input-group mb-3">
                 <input type="text" name="numOfWords" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default" placeholder="Максимальное количество слов">
+                    aria-describedby="inputGroup-sizing-default" placeholder="Максимальное количество слов" required>
             </div>
-            <button id="add" class="btn add" type="submit" name="learn">Готово</button>
+            <button id="add" class="btn add" type="submit" name="<%= type_form %>">Готово</button>
         </form>
     </div>
 
