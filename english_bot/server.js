@@ -150,14 +150,6 @@ app.post('/choose_train', urlencodedParser, function (req, res) {
     }
 });
 
-app.get('/add', function (req, res) {
-    res.render('main', {
-        typeAuth: 'noLogin',
-        type_content: 'add',
-        msg: 'nomsg'
-    });
-});
-
 app.post('/train', urlencodedParser, function (req, res) {
 
     let data = req.body;
@@ -192,13 +184,34 @@ app.post('/train', urlencodedParser, function (req, res) {
 
     console.log(correctAnswers);
 
+    if (correctAnswers == pictures.length) {
+
+        res.render('main', {
+            typeAuth: 'noLogin',
+            type_content: 'results',
+            msg: 'Всё правильно!',
+            data: incorrectAnswersData,
+            correctAnswers: correctAnswers
+        });
+    }
+    else {
+        res.render('main', {
+            typeAuth: 'noLogin',
+            type_content: 'results',
+            msg: 'Повторите ещё раз эти слова!',
+            data: incorrectAnswersData,
+            correctAnswers: correctAnswers
+        });
+    }
+
+});
+
+app.get('/add', function (req, res) {
     res.render('main', {
         typeAuth: 'noLogin',
-        type_content: 'results',
-        data: incorrectAnswersData,
-        correctAnswers: correctAnswers
+        type_content: 'add',
+        msg: 'nomsg'
     });
-
 });
 
 app.post('/add', urlencodedParser, function (req, res) {
@@ -272,7 +285,7 @@ app.get('/delete', function (req, res) {
 
 app.post('/delete', urlencodedParser, function (req, res) {
 
-    
+
 
 });
 

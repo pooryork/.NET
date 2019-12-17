@@ -1,6 +1,6 @@
 <div class="container">
     <form class="form-check" method="post" action="/train" name="train_check"> 
-        <h1 class="card-title"> Повторите ещё раз эти слова</h1>
+        <h1 class="title"> <%= msg %> </h1>
         <div class="album py-5">
             <div class="row">
                 <% for(var i=0; i < data.length; i++) { %>
@@ -18,3 +18,11 @@
         </div>
     </form>
 </div>
+
+<style>
+    .title {
+        align-self: center;
+        align-items: center;
+        align-content: center;
+    }
+</style>
