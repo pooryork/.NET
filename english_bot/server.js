@@ -31,7 +31,7 @@ app.use(fileUpload());
 
 let pictures;
 
-function reshake (array) {
+function reshake(array) {
 
     let returnObj = {};
 
@@ -46,7 +46,7 @@ function reshake (array) {
             num = random.int(min = 0, max = array.length);
 
         }
-        
+
         returnObj[i] = array[i];
 
         console.log(array[i]);
@@ -221,8 +221,7 @@ app.post('/train', urlencodedParser, function (req, res) {
             data: incorrectAnswersData,
             correctAnswers: correctAnswers
         });
-    }
-    else {
+    } else {
         res.render('main', {
             typeAuth: 'noLogin',
             type_content: 'results',
@@ -304,16 +303,90 @@ app.post('/add', urlencodedParser, function (req, res) {
 });
 
 app.get('/delete', function (req, res) {
-    res.render('main', {
-        typeAuth: 'admin',
-        type_content: 'delete',
-        msg: 'nomsg'
+
+    let sql = 'SELECT * FROM pictures';
+
+    pool.query(sql, [], function (req, res1) {
+
+        console.log(res1);
+        pictures = res1;
+        cur_train = res1;
+
+        res.render('main', {
+            typeAuth: 'admin',
+            type_content: 'delete',
+            data: pictures,
+            msg: 'nomsg'
+        });
+
     });
 });
 
 app.post('/delete', urlencodedParser, function (req, res) {
 
+    let data = req.body;
 
+    for (i in data) {
+
+        console.log(i);
+
+        let sql = "DELETE FROM pictures WHERE id = ?";
+
+        pool.query(sql, [i], function (req, res1) {
+
+            console.log(res1);
+
+            res.redirect('/delete');
+
+        });
+    }
+});
+
+app.get('/login', function (req, res) {
+
+res.render('main', {
+    typeAuth: '',
+    type_content: 'login',
+    data: pictures,
+    msg: 'nomsg'
+});
+
+});
+
+app.post('/login', urlencodedParser, function (req, res) {
+
+    let data = req.body;
+
+    console.log(data);
+
+    //если поля пусты
+    if (data.login == '' || data.password == '') {
+        // res.render('mainAuth', {
+        //     type: 'login'
+        // });
+    }
+    //если поля не пусты
+    else {
+        //запрос для авторизации
+        let sql = 'SELECT * FROM clients WHERE login = ?';
+        pool.query(sql, [data.login], function (req, res1) {
+
+            try {
+                console.log(res1[0]);
+
+                if (res1[0].login == data.login && res1[0].passwordHash == data.password) {
+                    console.log('Красава!');
+                    res.redirect('/add');
+                } else {
+                    console.log('Ебать ты лох!');
+                    res.redirect('/login');
+                }
+            } catch {
+                console.log('Ебать ты лох!');
+                res.redirect('/login');
+            }
+        });
+    }
 
 });
 

@@ -36,11 +36,17 @@
     <%if (type_content == 'add') { %>
     <%- include ('./blocks/add.ejs') %>
     <% } %>
+    <%if (type_content == 'delete') { %>
+    <%- include ('./blocks/delete.ejs') %>
+    <% } %>
     <%if (type_content == 'results') { %>
     <%- include ('./blocks/results.ejs') %>
     <% } %>
     <%if (type_content == 'choose') { %>
     <%- include ('./blocks/choose.ejs') %>
+    <% } %>
+    <%if (type_content == 'login') { %>
+    <%- include ('./blocks/login.ejs') %>
     <% } %>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"

@@ -1,0 +1,28 @@
+<div class="container">
+    <form class="form-check" method="post" action="/delete" name="delete_cards">
+        <div class="album py-5">
+            <div class="row">
+                <% for(var i=0; i < data.length; i++) { %>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm"><img src="<%= data[i].picture_ref%>" class="card-img-top" alt="..."
+                            height="300">
+                        <div class="card-body">
+                            <p> Тема - <%= data[i].topic%>, слово - <%= data[i].word%></p>
+                            <button id="add" class="btn btn-danger" type="submit" name="<%= data[i].id %>">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .btn {
+        align-self: center;
+        align-content: center;
+        align-items: center;
+    }
+</style>
