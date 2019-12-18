@@ -6,6 +6,7 @@ let urlencodedParser = bodyParser.urlencoded({
 });
 const fileUpload = require('express-fileupload');
 let mysql = require('mysql');
+let random = require('random');
 
 var pool = mysql.createPool({
     connectionLimit: 10,
@@ -29,7 +30,34 @@ app.use('/public', express.static('public'));
 app.use(fileUpload());
 
 let pictures;
-let cur_train;
+
+function reshake (array) {
+
+    let returnObj = {};
+
+    let usedNumbers = [];
+
+    for (let i in array) {
+
+        let num = random.int(min = 0, max = array.length);
+
+        while (usedNumbers.indexOf(num) != -1) {
+
+            num = random.int(min = 0, max = array.length);
+
+        }
+        
+        returnObj[i] = array[i];
+
+        console.log(array[i]);
+        console.log(returnObj[i]);
+
+        usedNumbers.push(num);
+
+    }
+
+    return returnObj;
+}
 
 app.get('/', (req, res) => {
     res.writeHead(302, {
@@ -127,7 +155,7 @@ app.post('/choose_train', urlencodedParser, function (req, res) {
     let data = req.body;
     console.log(data);
 
-    let sql = 'SELECT * FROM pictures WHERE topic = ?';
+    let sql = 'SELECT * FROM pictures WHERE topic = ? LIMIT ' + data.numOfWords;
 
     try {
 
@@ -208,7 +236,7 @@ app.post('/train', urlencodedParser, function (req, res) {
 
 app.get('/add', function (req, res) {
     res.render('main', {
-        typeAuth: 'noLogin',
+        typeAuth: 'admin',
         type_content: 'add',
         msg: 'nomsg'
     });
@@ -251,13 +279,13 @@ app.post('/add', urlencodedParser, function (req, res) {
                 let text = 'Слово "' + data.word + '"добавлено в категорию "' + data.topic + '"';
 
                 res.render('main', {
-                    typeAuth: 'noLogin',
+                    typeAuth: 'admin',
                     type_content: 'add',
                     msg: text
                 });
             } else {
                 res.render('main', {
-                    typeAuth: 'noLogin',
+                    typeAuth: 'admin',
                     type_content: 'add',
                     msg: 'Такое слово уже существует в такой категории!'
                 });
@@ -265,7 +293,7 @@ app.post('/add', urlencodedParser, function (req, res) {
 
         } catch {
             res.render('main', {
-                typeAuth: 'noLogin',
+                typeAuth: 'admin',
                 type_content: 'add',
                 msg: 'Что-то пошло не так ;('
             });
@@ -277,7 +305,7 @@ app.post('/add', urlencodedParser, function (req, res) {
 
 app.get('/delete', function (req, res) {
     res.render('main', {
-        typeAuth: 'noLogin',
+        typeAuth: 'admin',
         type_content: 'delete',
         msg: 'nomsg'
     });

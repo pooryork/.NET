@@ -23,6 +23,9 @@
     <%if (typeAuth == 'noLogin') { %>
     <%- include ('./blocks/noLoginHeader.ejs') %>
     <% } %>
+    <%if (typeAuth == 'admin') { %>
+    <%- include ('./blocks/adminHeader.ejs') %>
+    <% } %>
 
     <%if (type_content == 'learn') { %>
     <%- include ('./blocks/learn.ejs') %>
